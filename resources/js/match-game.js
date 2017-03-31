@@ -52,6 +52,8 @@ MatchGame.renderCards = function(cardValues, $game) {
                 "hsl(310,85%,65%)",
                 "hsl(360,85%,65%)"] ;
   $game.empty();
+  $game.data("moves", 0);
+  $('.score').text('Moves: 0');
   $game.data("flippedCards", []);
   for ( var i = 0; i < cardValues.length; i++) {
     var $card = $('<div class="col-xs-3 card"></div>');
@@ -100,6 +102,13 @@ MatchGame.flipCard = function($card, $game) {
   var flipped = $game.data('flippedCards');
   flipped.push($card);
   if (flipped.length === 2) {
+    // We are making a move
+    var moves = $game.data("moves");
+    moves += 1 ;
+    $game.data("moves", moves);
+    $('.score').text('Moves: ' + moves);
+
+    console.log("Completed " + moves + "moves.");
     // Do we have a match
     if (flipped[0].data("value") === flipped[1].data("value")) {
       var matchcss = {

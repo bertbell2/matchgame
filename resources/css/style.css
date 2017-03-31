@@ -11,6 +11,10 @@ body {
   padding-top: 5.2rem;
 }
 
+.instructions {
+  padding-bottom: 1rem;
+}
+
 .instructions h1, .instructions h2 {
   color: rgb(32,64,86);
 }
@@ -27,6 +31,12 @@ body {
 
 .instructions p {
   color: rgb(74,74,74);
+}
+
+.score {
+  text-align: center;
+  font-size: 1.25rem;
+  padding-bottom: 1rem;
 }
 
 .restart {
